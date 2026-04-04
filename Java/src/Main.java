@@ -47,7 +47,7 @@ public class Main {
                                 if  (matriz[linha][coluna] == null) {
                                     matriz[linha][coluna] = nome;
 
-                                    System.out.printf("Nome '%s' cadastrado em [%d][%d]%n", nome, linha, coluna);
+                                    System.out.printf("Nome '%s' cadastrado na linha: '%d', coluna: '%d' %n", nome, linha, coluna);
 
                                     adicionadoNome = true;
                                     break;
@@ -71,7 +71,7 @@ public class Main {
                                 String possuido = matriz[linha][coluna];
 
                                 if (possuido != null) {
-                                    System.out.printf("[%d][%d] = %s%n", linha, coluna, possuido);
+                                    System.out.printf("Linha: %d e a coluna: %d = %s%n", linha, coluna, possuido);
                                     possuiNome = true;
                                 }
                             }
@@ -99,13 +99,12 @@ public class Main {
                         // Search name in matrix
                         for (int linha = 0; linha < quantidadeLinhas && !removido; linha++) {
                             for (int coluna = 0; coluna < quantidadeColunas; coluna++) {
-                                if (matriz[linha][coluna] != null &&
-                                        matriz[linha][coluna].equalsIgnoreCase(nomeRemover)) {
+                                if (matriz[linha][coluna] != null && matriz[linha][coluna].equalsIgnoreCase(nomeRemover)) {
 
                                     matriz[linha][coluna] = null;
 
-                                    System.out.printf("Nome '%s' removido de [%d][%d]%n", nomeRemover, linha, coluna);
-
+                                    System.out.printf("Nome '%s' removido na linha: '%d' e sendo a coluna: '%d' %n", nomeRemover, linha, coluna);
+                                    
                                     removido = true;
                                     break;
                                 }
@@ -125,6 +124,7 @@ public class Main {
 
                     default -> {
                         System.out.println("Erro: 400 -> Opção inválida!"); // 400 = Bad Request
+                        break;
                     }
                 }
             } catch (Exception e) {
